@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-based Greeting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="greeting"></h1>
+    </div>
+
+    <script>
+        function greetUser() {
+            const currentHour = new Date().getHours();
+            let greeting;
+
+            if (currentHour < 12) {
+                greeting = "Good Morning!";
+            } else if (currentHour < 18) {
+                greeting = "Good Afternoon!";
+            } else {
+                greeting = "Good Evening!";
+            }
+
+            document.getElementById("greeting").textContent = greeting;
+        }
+
+        // Call the function to display the greeting when the page loads
+        greetUser();
+    </script>
+
+</body>
+</html>
